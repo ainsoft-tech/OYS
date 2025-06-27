@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+      --primary-color: #0b80ee;
+      --secondary-color: #f0f2f5;
+      --text-primary: #111518;
+      --text-secondary: #60768a;
+      --border-color: #dbe1e6;
+    }
+    body {
+      font-family: Inter, "Noto Sans", sans-serif;
+    }
+    .sidebar-link {
+      @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium leading-normal;
+    }
+    .sidebar-link.active {
+      @apply bg-[var(--secondary-color)] text-[var(--primary-color)];
+    }
+    .sidebar-link:not(.active) {
+      @apply text-[var(--text-primary)] hover:bg-gray-100;
+    }
+    .sidebar-link .icon {
+      @apply text-[var(--text-primary)];
+    }
+    .sidebar-link.active .icon {
+      @apply text-[var(--primary-color)];
+    }
+    .tab-link {
+      @apply flex flex-col items-center justify-center pb-[13px] pt-4 border-b-[3px] text-sm font-bold leading-normal tracking-[0.015em];
+    }
+    .tab-link.active {
+      @apply border-b-[var(--primary-color)] text-[var(--primary-color)];
+    }
+    .tab-link:not(.active) {
+      @apply border-b-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)];
+    }
+    .form-label {
+      @apply text-[var(--text-primary)] text-sm font-medium leading-normal pb-2;
+    }
+    .form-input-field {
+      @apply form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[var(--text-primary)] focus:outline-0 focus:ring-2 focus:ring-[var(--primary-color)] border border-[var(--border-color)] bg-white focus:border-[var(--primary-color)] h-12 px-4 py-3 placeholder:text-[var(--text-secondary)] text-sm font-normal leading-normal;
+    }
+    .primary-button {
+      @apply flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-600 transition-colors;
+    }
+    .table-header {
+      @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-[var(--text-secondary)];
+    }
+    .table-cell {
+      @apply h-[60px] px-4 py-3 text-sm font-normal leading-normal;
+    }
+    .navbar-link {
+      @apply flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium leading-normal;
+    }
+    .navbar-link.active {
+      @apply bg-[var(--secondary-color)] text-[var(--primary-color)];
+    }
+    .navbar-link:not(.active) {
+      @apply text-[var(--text-primary)] hover:bg-gray-100;
+    }
+    .navbar-link .icon {
+      @apply text-[var(--text-primary)];
+    }
+    .navbar-link.active .icon {
+      @apply text-[var(--primary-color)];
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+        style="--select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,118,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');">
+        <div class="flex flex-col h-full grow">
+            <header class="bg-white border-b border-[var(--border-color)] p-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <img alt="School Logo" class="h-8 w-8"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCRi4CbkeXcXu8TKjCBZ_hzypPnsrFuLMIHL3sEbNPXqZUU0tzFitoygs05Po84rK1E-E9PwJwNKovL9mCa1KBgi-9pw5crmP6Wchhn77WvVwys5tz43n8itqeSvybfRjGcSiUPvZ2WN6lnuy7a77NW4oSbHh5KBxsa7f6bFc0b5iKQfVpyPEeEaLDeEuOm60036O0o6ln3fmoyhv8Q_2nfBRQurVUw5chj7tgZPW--MLm03jd9dHxWQL1P7-NUorxMpd3wALub9rj" />
+                        <h1 class="text-[var(--text-primary)] text-lg font-semibold leading-normal">Okul Yönetimi</h1>
+                    </div>
+                    <nav class="flex items-center gap-2">
+                        <a class="navbar-link" href="#">
+                            <div class="icon" data-icon="House" data-size="20px" data-weight="regular">
+                                <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p>Genel Bakış</p>
+                        </a>
+                        <a class="navbar-link" href="#">
+                            <div class="icon" data-icon="Users" data-size="20px" data-weight="regular">
+                                <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p>Öğrenciler</p>
+                        </a>
+                        <a class="navbar-link" href="#">
+                            <div class="icon" data-icon="BookOpen" data-size="20px" data-weight="regular">
+                                <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p>Dersler</p>
+                        </a>
+                        <a class="navbar-link active" href="#">
+                            <div class="icon" data-icon="File" data-size="20px" data-weight="fill">
+                                <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM152,88V44l44,44Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p>Sınavlar</p>
+                        </a>
+                        <a class="navbar-link" href="#">
+                            <div class="icon" data-icon="Gear" data-size="20px" data-weight="regular">
+                                <svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <p>Ayarlar</p>
+                        </a>
+                    </nav>
+                </div>
+            </header>
+            <main class="flex-1 bg-gray-50 p-6">
+                <div class="flex flex-wrap justify-between items-center gap-3 mb-6">
+                    <p class="text-[var(--text-primary)] tracking-tight text-2xl font-bold leading-tight">Sınav Yönetimi
+                    </p>
+                </div>
+                <div class="mb-6">
+                    <div class="flex border-b border-[var(--border-color)] gap-8">
+                        <a class="tab-link active" href="#">
+                            <p>Sınav Takvimi</p>
+                        </a>
+                        <a class="tab-link" href="#">
+                            <p>Sınav Sonuçları</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h2 class="text-[var(--text-primary)] text-xl font-semibold leading-tight tracking-[-0.015em] mb-6">
+                        Sınav Ekle</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+                        <label class="flex flex-col">
+                            <p class="form-label">Sınav Adı</p>
+                            <input class="form-input-field" placeholder="Örn: Matematik 1. Dönem" value="" />
+                        </label>
+                        <label class="flex flex-col">
+                            <p class="form-label">Ders</p>
+                            <select class="form-input-field bg-[image:--select-button-svg]">
+                                <option disabled="" selected="" value="">Ders Seçin</option>
+                                <option value="matematik">Matematik</option>
+                                <option value="fizik">Fizik</option>
+                                <option value="kimya">Kimya</option>
+                            </select>
+                        </label>
+                        <label class="flex flex-col">
+                            <p class="form-label">Sınıf</p>
+                            <select class="form-input-field bg-[image:--select-button-svg]">
+                                <option disabled="" selected="" value="">Sınıf Seçin</option>
+                                <option value="9a">9-A</option>
+                                <option value="10b">10-B</option>
+                                <option value="11c">11-C</option>
+                            </select>
+                        </label>
+                        <label class="flex flex-col">
+                            <p class="form-label">Sınav Tarihi</p>
+                            <input class="form-input-field" type="date" value="" />
+                        </label>
+                        <label class="flex flex-col">
+                            <p class="form-label">Sınav Saati</p>
+                            <input class="form-input-field" type="time" value="" />
+                        </label>
+                    </div>
+                    <div class="flex justify-end mt-6">
+                        <button class="primary-button">
+                            <span class="truncate">Sınav Ekle</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h2 class="text-[var(--text-primary)] text-xl font-semibold leading-tight tracking-[-0.015em] mb-6">
+                        Sınav Takvimi</h2>
+                    <div class="overflow-x-auto @container">
+                        <div class="border border-[var(--border-color)] rounded-lg">
+                            <table class="min-w-full divide-y divide-[var(--border-color)]">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-120">
+                                            Sınav Adı
+                                        </th>
+                                        <th class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-240">
+                                            Ders</th>
+                                        <th class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-360">
+                                            Sınıf</th>
+                                        <th class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-480">
+                                            Tarih</th>
+                                        <th class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-600">
+                                            Saat</th>
+                                        <th
+                                            class="table-header table-4f6eef1f-9921-4af9-b887-38429df257e2-column-720 text-right">
+                                            İşlemler
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-[var(--border-color)]">
+                                    <tr>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-120 text-[var(--text-primary)] font-medium">
+                                            Matematik 1. Dönem
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-240 text-[var(--text-secondary)]">
+                                            Matematik
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-360 text-[var(--text-secondary)]">
+                                            9-A</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-480 text-[var(--text-secondary)]">
+                                            15/05/2024
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-600 text-[var(--text-secondary)]">
+                                            10:00</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-720 text-right">
+                                            <button
+                                                class="text-[var(--primary-color)] hover:text-blue-700 font-semibold text-sm">Düzenle</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-120 text-[var(--text-primary)] font-medium">
+                                            Fizik 1. Dönem
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-240 text-[var(--text-secondary)]">
+                                            Fizik</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-360 text-[var(--text-secondary)]">
+                                            10-B</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-480 text-[var(--text-secondary)]">
+                                            16/05/2024
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-600 text-[var(--text-secondary)]">
+                                            11:00</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-720 text-right">
+                                            <button
+                                                class="text-[var(--primary-color)] hover:text-blue-700 font-semibold text-sm">Düzenle</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-120 text-[var(--text-primary)] font-medium">
+                                            Kimya 1. Dönem
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-240 text-[var(--text-secondary)]">
+                                            Kimya</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-360 text-[var(--text-secondary)]">
+                                            11-C</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-480 text-[var(--text-secondary)]">
+                                            17/05/2024
+                                        </td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-600 text-[var(--text-secondary)]">
+                                            12:00</td>
+                                        <td
+                                            class="table-cell table-4f6eef1f-9921-4af9-b887-38429df257e2-column-720 text-right">
+                                            <button
+                                                class="text-[var(--primary-color)] hover:text-blue-700 font-semibold text-sm">Düzenle</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <style>
+                            @container(max-width:120px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-120 {
+                                    display: none;
+                                }
+                            }
+
+                            @container(max-width:240px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-240 {
+                                    display: none;
+                                }
+                            }
+
+                            @container(max-width:360px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-360 {
+                                    display: none;
+                                }
+                            }
+
+                            @container(max-width:480px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-480 {
+                                    display: none;
+                                }
+                            }
+
+                            @container(max-width:600px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-600 {
+                                    display: none;
+                                }
+                            }
+
+                            @container(max-width:720px) {
+                                .table-4f6eef1f-9921-4af9-b887-38429df257e2-column-720 {
+                                    display: none;
+                                }
+                            }
+                        </style>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>

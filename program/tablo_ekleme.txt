@@ -1,0 +1,28 @@
+id, ders_id(lessons tablosu ders_kodu), ders_adi_id(lessons tablosu ders_adi), 
+teacher_id(teachers tablosu full_name), sinif_id(siniflar tablosu sinif_adi), 
+gun, ders_saati, haftalik_ders_saati, status, created_at, updated_at, created_by
+duration, derslik, description sütunlarından oluşan timetable tablosu oluşturulacak.
+
+CREATE TABLE timetable (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ders_id INT,
+    ders_adi_id INT,
+    teacher_id INT,
+    sinif_id INT,
+    gun ENUM('Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma'),
+    ders_saati time,
+    haftalik_ders_saati INT,
+    status ENUM('aktif', 'pasif'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    created_by INT,
+    duration VARCHAR(50),
+    classroom VARCHAR(50),
+    description TEXT,
+    CONSTRAINT fk_ders_id FOREIGN KEY (ders_id) REFERENCES lessons(id) ON DELETE CASCADE,
+    CONSTRAINT fk_ders_adi_id FOREIGN KEY (ders_adi_id) REFERENCES lessons(id) ON DELETE CASCADE,
+    CONSTRAINT fk_teacher_id FOREIGN KEY (teacher_id) REFERENCES teachers(id) ON DELETE CASCADE,
+    CONSTRAINT fk_sinif_id FOREIGN KEY (sinif_id) REFERENCES siniflar(id) ON DELETE CASCADE,
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

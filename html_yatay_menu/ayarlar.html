@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #0b80ee;
+            --select-button-svg: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(96,118,138)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48,48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e'); 
+        }
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px; 
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 flex-col justify-start py-8 px-4 md:px-6">
+                <aside class="w-full bg-white p-6 rounded-xl shadow-sm mb-8">
+                    <h2 class="text-xl font-semibold text-slate-800 mb-4 md:mb-6">Ayarlar</h2>
+                    <nav class="flex flex-col md:flex-row gap-2 overflow-x-auto pb-2 md:pb-0">
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-sky-100 text-sky-600 hover:bg-sky-200 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons text-sky-600">settings</span>
+                            <span class="text-sm font-medium">Genel</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons">people_outline</span>
+                            <span class="text-sm font-medium">Kullanıcılar</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons">shield</span>
+                            <span class="text-sm font-medium">Roller</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons">vpn_key</span>
+                            <span class="text-sm font-medium">İzinler</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons">storage</span>
+                            <span class="text-sm font-medium">Sistem</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-200 flex-shrink-0"
+                            href="#">
+                            <span class="material-icons">apps</span>
+                            <span class="text-sm font-medium">Diğer</span>
+                        </a>
+                    </nav>
+                </aside>
+                <main class="flex-1 bg-white p-6 md:p-8 rounded-xl shadow-sm">
+                    <header class="mb-8">
+                        <h1 class="text-3xl font-bold text-slate-800">Genel Ayarlar</h1>
+                        <p class="text-slate-500 mt-1">Uygulamanızın temel yapılandırmalarını yönetin.</p>
+                    </header>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-700 mb-2">Uygulama Adı</h3>
+                            <input
+                                class="form-input w-full max-w-md rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700"
+                                placeholder="Örn: Okul Yönetim Sistemi" type="text" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-700 mb-2">Uygulama Logosu</h3>
+                            <div
+                                class="flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-slate-300 p-8 md:p-10 text-center max-w-md hover:border-sky-500 transition-colors duration-200 cursor-pointer group">
+                                <span
+                                    class="material-icons text-6xl text-slate-400 group-hover:text-sky-500 transition-colors duration-200">cloud_upload</span>
+                                <p class="text-slate-600 font-medium">Logo Yükle</p>
+                                <p class="text-sm text-slate-500">Bir logo yüklemek için tıklayın veya sürükleyip
+                                    bırakın.<br />(PNG, JPG, SVG - Maks. 2MB)</p>
+                                <button
+                                    class="mt-2 flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-10 px-5 bg-sky-500 text-white text-sm font-medium hover:bg-sky-600 transition-colors duration-200">
+                                    <span class="material-icons text-base">attach_file</span>
+                                    <span class="truncate">Dosya Seç</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-700 mb-2">Varsayılan Dil</h3>
+                                <select
+                                    class="form-select w-full rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700 bg-[image:--select-button-svg]">
+                                    <option value="tr">Türkçe</option>
+                                    <option value="en">English</option>
+                                    <option value="de">Deutsch</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-700 mb-2">Zaman Dilimi</h3>
+                                <select
+                                    class="form-select w-full rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700 bg-[image:--select-button-svg]">
+                                    <option value="Europe/Istanbul">(GMT+03:00) Istanbul</option>
+                                    <option value="Europe/London">(GMT+01:00) London</option>
+                                    <option value="America/New_York">(GMT-04:00) New York</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-700 mb-2">Para Birimi</h3>
+                                <select
+                                    class="form-select w-full rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700 bg-[image:--select-button-svg]">
+                                    <option value="TRY">Türk Lirası (TRY)</option>
+                                    <option value="USD">ABD Doları (USD)</option>
+                                    <option value="EUR">Euro (EUR)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-slate-700 mb-2">Tarih Formatı</h3>
+                                <select
+                                    class="form-select w-full rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700 bg-[image:--select-button-svg]">
+                                    <option value="DD/MM/YYYY">GG/AA/YYYY</option>
+                                    <option value="MM/DD/YYYY">AA/GG/YYYY</option>
+                                    <option value="YYYY-MM-DD">YYYY-AA-GG</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-700 mb-2">Saat Formatı</h3>
+                            <select
+                                class="form-select w-full max-w-md rounded-lg border-slate-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 transition-colors duration-200 h-12 px-4 text-slate-700 bg-[image:--select-button-svg]">
+                                <option value="HH:mm">24 Saat (Örn: 14:30)</option>
+                                <option value="hh:mm A">12 Saat (Örn: 02:30 PM)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-10 pt-6 border-t border-slate-200 flex justify-end">
+                        <button
+                            class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-12 px-6 bg-[var(--primary-color)] text-white text-sm font-medium hover:bg-sky-700 transition-colors duration-200 shadow-md hover:shadow-lg">
+                            <span class="material-icons text-lg">save</span>
+                            <span class="truncate">Değişiklikleri Kaydet</span>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

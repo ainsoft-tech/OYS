@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #4B5563;--light-bg: #F3F4F6;--light-surface: #FFFFFF;--light-surface-alt: #E5E7EB;--light-border: #D1D5DB;--light-text-primary: #1F2937;--light-text-secondary: #6B7280;--light-text-placeholder: #9CA3AF;}
+        .nav-link-active {
+            color: var(--primary-color) !important;
+            background-color: var(--light-surface-alt);
+            font-weight: 600;}
+    </style>
+</head>
+
+<body class="bg-[var(--light-bg)]" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[var(--light-border)] px-6 md:px-10 py-4 bg-[var(--light-surface)] shadow-sm">
+                <div class="flex items-center gap-3 text-[var(--light-text-primary)]">
+                    <div class="size-8 text-[var(--primary-color)]">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                                fill="currentColor" fill-rule="evenodd"></path>
+                            <path clip-rule="evenodd"
+                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                                fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-[var(--light-text-primary)] text-lg font-bold leading-tight tracking-[-0.015em]">
+                        Okul Yönetim Sistemi</h2>
+                </div>
+                <nav class="flex items-center gap-2">
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--light-text-secondary)] hover:text-[var(--primary-color)] hover:bg-[var(--light-surface-alt)] text-sm font-medium leading-normal transition-colors"
+                        href="#">
+                        <span class="material-icons text-base">home</span>
+                        <span>Ana Sayfa</span>
+                    </a>
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--light-text-secondary)] hover:text-[var(--primary-color)] hover:bg-[var(--light-surface-alt)] text-sm font-medium leading-normal transition-colors"
+                        href="#">
+                        <span class="material-icons text-base">school</span>
+                        <span>Öğrenciler</span>
+                    </a>
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg nav-link-active text-sm font-medium leading-normal"
+                        href="#">
+                        <span class="material-icons text-base">person</span>
+                        <span>Öğretmenler</span>
+                    </a>
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--light-text-secondary)] hover:text-[var(--primary-color)] hover:bg-[var(--light-surface-alt)] text-sm font-medium leading-normal transition-colors"
+                        href="#">
+                        <span class="material-icons text-base">book</span>
+                        <span>Dersler</span>
+                    </a>
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--light-text-secondary)] hover:text-[var(--primary-color)] hover:bg-[var(--light-surface-alt)] text-sm font-medium leading-normal transition-colors"
+                        href="#">
+                        <span class="material-icons text-base">calendar_today</span>
+                        <span>Takvim</span>
+                    </a>
+                    <a class="flex items-center gap-2 px-4 py-2 rounded-lg text-[var(--light-text-secondary)] hover:text-[var(--primary-color)] hover:bg-[var(--light-surface-alt)] text-sm font-medium leading-normal transition-colors"
+                        href="#">
+                        <span class="material-icons text-base">bar_chart</span>
+                        <span>Raporlar</span>
+                    </a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button class="text-[var(--light-text-secondary)] hover:text-[var(--light-text-primary)]">
+                        <span class="material-icons">notifications</span>
+                    </button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--primary-color)]"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKw6I9MmS3c0rsNLbSlj2AZZOKv1p07vY6Lwyvwh7mYk9a1KITBu6boWZRbc8nLUaIIayRcZR86KH4jhqibRucHUtxB-xiqQyB3G4GCHqQi52SQv3hPYG2k-wv_5J8e80I6sbm4qAf68_kMkVZna_DP1fiDAYPW2E91H3Z2mGTtlblpF79s7r9JoX2ciG3qUROG3oTJETh2La51EEDk9wXiuFdHLiS7rH4EU18zCMILR94Jt8jo07iW47-HUIuLPZGPbR3JIYBnROk");'>
+                    </div>
+                </div>
+            </header>
+            <main class="px-6 md:px-10 lg:px-12 flex flex-1 flex-col py-8">
+                <div class="layout-content-container flex flex-col flex-1">
+                    <div class="flex flex-wrap justify-between items-center gap-4 p-4 mb-6">
+                        <h1 class="text-[var(--light-text-primary)] tracking-light text-3xl font-bold leading-tight">
+                            Öğretmenler</h1>
+                        <button
+                            class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-5 bg-[var(--primary-color)] text-[var(--light-bg)] text-sm font-bold leading-normal hover:bg-opacity-80 transition-colors">
+                            <span class="material-icons text-lg">add</span>
+                            <span class="truncate">Yeni Öğretmen Ekle</span>
+                        </button>
+                    </div>
+                    <div class="px-4 py-3 mb-6">
+                        <label class="flex flex-col min-w-40 h-12 w-full">
+                            <div
+                                class="flex w-full flex-1 items-stretch rounded-xl h-full bg-[var(--light-surface)] shadow-md border border-[var(--light-border)]">
+                                <div class="text-[var(--light-text-placeholder)] flex items-center justify-center pl-4">
+                                    <span class="material-icons">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[var(--light-text-primary)] focus:outline-0 focus:ring-0 border-none bg-[var(--light-surface)] h-full placeholder:text-[var(--light-text-placeholder)] px-4 pl-2 text-base font-normal leading-normal"
+                                    placeholder="Öğretmen ara (Ad, Branş, vb...)" value="" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="px-4 py-3 @container flex-1">
+                        <div
+                            class="overflow-hidden rounded-xl border border-[var(--light-border)] bg-[var(--light-surface)] shadow-lg h-full flex flex-col">
+                            <table class="w-full">
+                                <thead class="bg-[var(--light-surface-alt)]">
+                                    <tr>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            Ad Soyad</th>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            Branş</th>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            İletişim</th>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            Sınıflar</th>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            Durum</th>
+                                        <th
+                                            class="px-6 py-4 text-left text-[var(--light-text-primary)] text-xs font-semibold uppercase tracking-wider">
+                                            İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-[var(--light-border)]">
+                                    <tr class="hover:bg-[var(--light-surface-alt)] transition-colors">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-primary)] text-sm font-medium">
+                                            Ayşe Yılmaz</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            Matematik</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            ayse.yilmaz@email.com</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            9A, 10B</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span
+                                                class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex items-center gap-2">
+                                                <button
+                                                    class="text-[var(--primary-color)] hover:text-opacity-80 transition-opacity"><span
+                                                        class="material-icons text-xl">edit</span></button>
+                                                <button class="text-red-500 hover:text-red-700 transition-colors"><span
+                                                        class="material-icons text-xl">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-[var(--light-surface-alt)] transition-colors">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-primary)] text-sm font-medium">
+                                            Mehmet Demir</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            Fizik</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            mehmet.demir@email.com</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            11A, 12B</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span
+                                                class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex items-center gap-2">
+                                                <button
+                                                    class="text-[var(--primary-color)] hover:text-opacity-80 transition-opacity"><span
+                                                        class="material-icons text-xl">edit</span></button>
+                                                <button class="text-red-500 hover:text-red-700 transition-colors"><span
+                                                        class="material-icons text-xl">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-[var(--light-surface-alt)] transition-colors">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-primary)] text-sm font-medium">
+                                            Elif Kaya</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            Kimya</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            elif.kaya@email.com</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            10C, 11D</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span
+                                                class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Pasif</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex items-center gap-2">
+                                                <button
+                                                    class="text-[var(--primary-color)] hover:text-opacity-80 transition-opacity"><span
+                                                        class="material-icons text-xl">edit</span></button>
+                                                <button class="text-red-500 hover:text-red-700 transition-colors"><span
+                                                        class="material-icons text-xl">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-[var(--light-surface-alt)] transition-colors">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-primary)] text-sm font-medium">
+                                            Ahmet Öztürk</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            Biyoloji</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            ahmet.ozturk@email.com</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            9B, 12A</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span
+                                                class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Aktif</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex items-center gap-2">
+                                                <button
+                                                    class="text-[var(--primary-color)] hover:text-opacity-80 transition-opacity"><span
+                                                        class="material-icons text-xl">edit</span></button>
+                                                <button class="text-red-500 hover:text-red-700 transition-colors"><span
+                                                        class="material-icons text-xl">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-[var(--light-surface-alt)] transition-colors">
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-primary)] text-sm font-medium">
+                                            Zeynep Can</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            Türkçe</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            zeynep.can@email.com</td>
+                                        <td
+                                            class="px-6 py-4 whitespace-nowrap text-[var(--light-text-secondary)] text-sm">
+                                            9C, 10A</td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <span
+                                                class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">İzinli</span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                            <div class="flex items-center gap-2">
+                                                <button
+                                                    class="text-[var(--primary-color)] hover:text-opacity-80 transition-opacity"><span
+                                                        class="material-icons text-xl">edit</span></button>
+                                                <button class="text-red-500 hover:text-red-700 transition-colors"><span
+                                                        class="material-icons text-xl">delete</span></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div
+                                class="mt-auto px-6 py-4 border-t border-[var(--light-border)] flex items-center justify-between">
+                                <p class="text-sm text-[var(--light-text-secondary)]">Toplam 5 öğretmen</p>
+                                <div class="flex gap-2">
+                                    <button
+                                        class="p-2 rounded-md hover:bg-[var(--light-surface-alt)] disabled:opacity-50 text-[var(--light-text-secondary)]"
+                                        disabled=""><span class="material-icons">chevron_left</span></button>
+                                    <button
+                                        class="p-2 rounded-md hover:bg-[var(--light-surface-alt)] text-[var(--light-text-secondary)]"><span
+                                            class="material-icons">chevron_right</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>

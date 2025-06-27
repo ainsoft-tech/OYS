@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+    <title>Okul Yönetim Sistemi - Zaman Çizelgesi</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #0b80ee;
+            --primary-hover-color: #0068c9;
+            --secondary-bg-color: #f0f2f5;
+            --text-primary: #111518;
+            --text-secondary: #60768a;
+            --border-color: #dbe1e6;
+        }
+        .sidebar-link {
+            @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-[var(--text-primary)] hover:bg-[var(--secondary-bg-color)] transition-colors duration-200;
+        }
+        .sidebar-link.active {
+            @apply bg-[var(--primary-color)] text-white;
+        }
+        .sidebar-link.active .material-icons, .sidebar-link.active p {
+            @apply text-white;
+        }
+        .sidebar-link .material-icons {
+            @apply text-xl text-[var(--text-secondary)];
+        }
+        .sidebar-link p {
+            @apply text-sm font-medium;
+        }
+        .main-content {
+            @apply flex-1 bg-slate-50;
+        }
+        .page-header {
+            @apply text-[var(--text-primary)] text-2xl font-semibold;
+        }
+        .page-subheader {
+            @apply text-[var(--text-secondary)] text-sm;
+        }
+        .section-title {
+            @apply text-[var(--text-primary)] text-lg font-semibold leading-tight tracking-tight;
+        }
+        .pill-button {
+            @apply flex h-9 items-center justify-center gap-x-2 rounded-full bg-[var(--secondary-bg-color)] px-4 py-2 text-sm font-medium text-[var(--text-primary)] hover:bg-slate-200 transition-colors duration-200;
+        }
+        .pill-button.active {
+            @apply bg-[var(--primary-color)] text-white hover:bg-[var(--primary-hover-color)];
+        }
+        .table th {
+            @apply px-6 py-4 text-left text-xs font-medium text-[var(--text-secondary)] uppercase tracking-wider bg-slate-100;
+        }
+        .table td {
+            @apply px-6 py-4 whitespace-nowrap text-sm text-[var(--text-primary)];
+        }
+        .table tbody tr:nth-child(even) {
+            @apply bg-white;
+        }
+        .table tbody tr:nth-child(odd) {
+            @apply bg-slate-50;
+        }.horizontal-menu {
+            @apply flex flex-col w-full;}
+        .horizontal-menu-bar {
+            @apply bg-white p-4 border-b border-[var(--border-color)] flex items-center justify-between;}
+        .horizontal-menu-nav {
+            @apply flex gap-2 items-center;}
+        .horizontal-menu-link {
+            @apply flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium text-[var(--text-primary)] hover:bg-[var(--secondary-bg-color)] transition-colors duration-200;
+        }
+        .horizontal-menu-link.active {
+            @apply bg-[var(--primary-color)] text-white hover:bg-[var(--primary-hover-color)];
+        }
+        .horizontal-menu-link.active .material-icons, .horizontal-menu-link.active p {
+            @apply text-white;
+        }
+        .horizontal-menu-link .material-icons {
+            @apply text-lg text-[var(--text-secondary)];
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50" style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="relative flex min-h-screen flex-col group/design-root overflow-x-hidden">
+        <div class="horizontal-menu">
+            <header class="horizontal-menu-bar">
+                <div class="flex items-center gap-3">
+                    <img alt="Okul Logosu" class="h-10 w-10 rounded-lg object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE_VihHPU04db0go5nw2keLMe5KlYinZTxuZKxXDdwxy-xDhD523LopiZbFZjfqXW4Za0FofBUHekLrpSJyPyLOJquRGsKtDjJcxEcpqriYfQj7tghEnSqTRp3m5uVC1SQVYW-clDU8Gw-czAHXY65jIlq65oOE6M9yxXqbnX6hXQuJS_DNcc8LMOcuarqyEKywkqu0Rz255zthJTYMGC_68cGo73HJSQ1BXfY9VrDaS-Ih213QGNMAIJ9wI7c0HoBwI5zJgAyB2BJ" />
+                    <h1 class="text-[var(--text-primary)] text-xl font-semibold">Okul Yönetimi</h1>
+                </div>
+                <nav class="horizontal-menu-nav">
+                    <a class="horizontal-menu-link" href="#">
+                        <span class="material-icons">dashboard</span>
+                        <p>Genel Bakış</p>
+                    </a>
+                    <a class="horizontal-menu-link" href="#">
+                        <span class="material-icons">people</span>
+                        <p>Öğrenciler</p>
+                    </a>
+                    <a class="horizontal-menu-link" href="#">
+                        <span class="material-icons">school</span>
+                        <p>Öğretmenler</p>
+                    </a>
+                    <a class="horizontal-menu-link" href="#">
+                        <span class="material-icons">menu_book</span>
+                        <p>Dersler</p>
+                    </a>
+                    <a class="horizontal-menu-link active" href="#">
+                        <span class="material-icons">calendar_today</span>
+                        <p>Zaman Çizelgesi</p>
+                    </a>
+                </nav>
+                <a class="horizontal-menu-link" href="#">
+                    <span class="material-icons">logout</span>
+                    <p>Çıkış Yap</p>
+                </a>
+            </header>
+            <main class="flex-1 p-8 flex flex-col gap-8">
+                <header class="flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <h2 class="page-header">Zaman Çizelgesi</h2>
+                        <p class="page-subheader">Okulun haftalık ders programını yönetin.</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 bg-[var(--primary-color)] text-white px-4 py-2.5 rounded-lg text-sm font-medium hover:bg-[var(--primary-hover-color)] transition-colors duration-200">
+                        <span class="material-icons text-lg">add_circle_outline</span>
+                        Yeni Ders Ekle
+                    </button>
+                </header>
+                <section>
+                    <h3 class="section-title mb-4">Sınıflar</h3>
+                    <div class="flex gap-3 flex-wrap">
+                        <button class="pill-button active">Tüm Sınıflar</button>
+                        <button class="pill-button">9. Sınıf</button>
+                        <button class="pill-button">10. Sınıf</button>
+                        <button class="pill-button">11. Sınıf</button>
+                        <button class="pill-button">12. Sınıf</button>
+                    </div>
+                </section>
+                <section class="flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <h3 class="section-title">Ders Programı</h3>
+                        <div class="flex gap-2 items-center">
+                            <button class="p-2 rounded-md hover:bg-slate-200 transition-colors duration-200">
+                                <span class="material-icons text-[var(--text-secondary)]">chevron_left</span>
+                            </button>
+                            <p class="text-sm font-medium text-[var(--text-primary)]">25 Kasım - 1 Aralık</p>
+                            <button class="p-2 rounded-md hover:bg-slate-200 transition-colors duration-200">
+                                <span class="material-icons text-[var(--text-secondary)]">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto rounded-lg border border-[var(--border-color)] bg-white shadow-sm">
+                        <table class="min-w-full divide-y divide-[var(--border-color)] table">
+                            <thead>
+                                <tr>
+                                    <th>Ders</th>
+                                    <th>Öğretmen</th>
+                                    <th>Sınıf</th>
+                                    <th>Gün</th>
+                                    <th>Saat</th>
+                                    <th class="w-24 text-center">Eylemler</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[var(--border-color)]">
+                                <tr>
+                                    <td class="font-medium">Matematik</td>
+                                    <td class="text-[var(--text-secondary)]">Dr. Elif Kaya</td>
+                                    <td class="text-[var(--text-secondary)]">9. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Pazartesi</td>
+                                    <td class="text-[var(--text-secondary)]">09:00 - 10:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Fizik</td>
+                                    <td class="text-[var(--text-secondary)]">Prof. Mehmet Demir</td>
+                                    <td class="text-[var(--text-secondary)]">10. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Salı</td>
+                                    <td class="text-[var(--text-secondary)]">11:00 - 12:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Kimya</td>
+                                    <td class="text-[var(--text-secondary)]">Doç. Ayşe Yılmaz</td>
+                                    <td class="text-[var(--text-secondary)]">11. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Çarşamba</td>
+                                    <td class="text-[var(--text-secondary)]">13:00 - 14:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Biyoloji</td>
+                                    <td class="text-[var(--text-secondary)]">Dr. Can Özcan</td>
+                                    <td class="text-[var(--text-secondary)]">9. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Perşembe</td>
+                                    <td class="text-[var(--text-secondary)]">10:00 - 11:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Tarih</td>
+                                    <td class="text-[var(--text-secondary)]">Prof. Zeynep Tekin</td>
+                                    <td class="text-[var(--text-secondary)]">10. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Cuma</td>
+                                    <td class="text-[var(--text-secondary)]">14:00 - 15:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Edebiyat</td>
+                                    <td class="text-[var(--text-secondary)]">Öğr. Gör. Ali Veli</td>
+                                    <td class="text-[var(--text-secondary)]">11. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Pazartesi</td>
+                                    <td class="text-[var(--text-secondary)]">10:00 - 11:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-medium">Coğrafya</td>
+                                    <td class="text-[var(--text-secondary)]">Uzm. Ayşe Fatma</td>
+                                    <td class="text-[var(--text-secondary)]">9. Sınıf</td>
+                                    <td class="text-[var(--text-secondary)]">Salı</td>
+                                    <td class="text-[var(--text-secondary)]">14:00 - 15:00</td>
+                                    <td class="text-center">
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-[var(--primary-color)] transition-colors duration-200">
+                                            <span class="material-icons text-lg">edit</span>
+                                        </button>
+                                        <button
+                                            class="p-1.5 text-[var(--text-secondary)] hover:text-red-500 transition-colors duration-200">
+                                            <span class="material-icons text-lg">delete_outline</span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>
