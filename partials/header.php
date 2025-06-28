@@ -49,9 +49,9 @@ require_once '../config/oys_vt.php';
                                 <span class="material-icons nav-link-icon">more_horiz</span>Diğer
                             </button>
                             <div
-                                class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out invisible group-hover:visible">
+                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out invisible group-hover:visible">
                                 <a class="block px-4 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--secondary-color)] flex items-center"
-                                    href="#"><span class="material-icons nav-link-icon">assessment</span>Sınav
+                                    href="../examinations/examinations.php"><span class="material-icons nav-link-icon">assessment</span>Sınav
                                     Yönetimi</a>
                                 <a class="block px-4 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--secondary-color)] flex items-center"
                                     href="#"><span class="material-icons nav-link-icon">grading</span>Not Yönetimi</a>
