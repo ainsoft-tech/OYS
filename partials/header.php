@@ -1,5 +1,8 @@
 <?php
 require_once '../config/oys_vt.php';
+
+// Aktif sayfa yolunu al
+$current = $_SERVER['SCRIPT_NAME'];
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -32,25 +35,31 @@ require_once '../config/oys_vt.php';
                             Yönetim Sistemi</h2>
                     </div>
                     <nav class="flex flex-1 justify-end items-center gap-1">
-                        <a class="nav-link flex items-center nav-link-active"><span
-                                class="material-icons nav-link-icon">admin_panel_settings</span>Yönetici Paneli</a>
-                        <a class="nav-link flex items-center" href="../admin/siniflar.php"><span
-                                class="material-icons nav-link-icon">class</span>Sınıf Yönetimi</a>
-                        <a class="nav-link flex items-center" href="../admin/students.php"><span
-                                class="material-icons nav-link-icon">people</span>Öğrenci İşlemleri</a>
-                        <a class="nav-link flex items-center" href="../teachers/teachers.php"><span
-                                class="material-icons nav-link-icon">school</span>Öğretmenler</a>
-                        <a class="nav-link flex items-center" href="../lessons/lessons.php"><span
-                                class="material-icons nav-link-icon">book</span>Ders Yönetimi</a>
-                        <a class="nav-link flex items-center" href="../program/program.php"><span
-                                class="material-icons nav-link-icon">schedule</span>Ders Programı</a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/admin/dashboard.php') !== false) ? 'nav-link-active' : '' ?>" href="../admin/dashboard.php">
+                            <span class="material-icons nav-link-icon">admin_panel_settings</span>Yönetici Paneli
+                        </a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/admin/siniflar.php') !== false) ? 'nav-link-active' : '' ?>" href="../admin/siniflar.php">
+                            <span class="material-icons nav-link-icon">class</span>Sınıf Yönetimi
+                        </a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/admin/students.php') !== false) ? 'nav-link-active' : '' ?>" href="../admin/students.php">
+                            <span class="material-icons nav-link-icon">people</span>Öğrenci İşlemleri
+                        </a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/teachers/teachers.php') !== false) ? 'nav-link-active' : '' ?>" href="../teachers/teachers.php">
+                            <span class="material-icons nav-link-icon">school</span>Öğretmenler
+                        </a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/lessons/lessons.php') !== false) ? 'nav-link-active' : '' ?>" href="../lessons/lessons.php">
+                            <span class="material-icons nav-link-icon">book</span>Ders Yönetimi
+                        </a>
+                        <a class="nav-link flex items-center <?= (strpos($current, '/program/program.php') !== false) ? 'nav-link-active' : '' ?>" href="../program/program.php">
+                            <span class="material-icons nav-link-icon">schedule</span>Ders Programı
+                        </a>
                         <div class="relative group">
-                            <button class="nav-link flex items-center">
+                            <button class="nav-link flex items-center" tabindex="0">
                                 <span class="material-icons nav-link-icon">more_horiz</span>Diğer
                             </button>
                             <div
-                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-150 ease-in-out invisible group-hover:visible">
-                                <a class="block px-4 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--secondary-color)] flex items-center"
+                                class="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-20 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-150 ease-in-out invisible group-hover:visible group-focus-within:visible">
+                                <a class="block px-4 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--secondary-color)] flex items-center <?= (strpos($current, '/examinations/examinations.php') !== false) ? 'nav-link-active' : '' ?>"
                                     href="../examinations/examinations.php"><span class="material-icons nav-link-icon">assessment</span>Sınav
                                     Yönetimi</a>
                                 <a class="block px-4 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--secondary-color)] flex items-center"

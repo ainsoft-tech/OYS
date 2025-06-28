@@ -28,6 +28,6 @@ include_once '../partials/header.php';
                 </div>
             </main>
 <?php
-include_once 'partials/footer.php';
+include_once '../partials/footer.php';
 
 ?>

@@ -50,7 +50,7 @@ foreach ($programlar as $row) {
 <style type="text/tailwindcss">
     :root {
       --primary-color:rgb(0, 0, 0);
-      --secondary-color: #1E3A8A;
+      --secondary-color:rgb(240, 240, 240);
       --accent-color: #3B82F6;
       --neutral-color: #F3F4F6;
       --text-primary: #1F2937;
@@ -62,7 +62,7 @@ foreach ($programlar as $row) {
     .nav-link-active {
       color: var(--accent-color) !important;
       font-weight: 700 !important;
-      border-bottom: 2px solid var(--accent-color);
+      
     }
     .nav-link:hover{
         background-color: var(--neutral-color);
